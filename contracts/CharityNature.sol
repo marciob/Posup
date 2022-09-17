@@ -14,7 +14,7 @@ contract CharityNature {
         owner = payable(msg.sender);
     }
 
-    uint max_donation_pool = 1000;
+    uint max_donation_pool = 10000 ether;
 
     uint total_reached;
 
@@ -33,6 +33,10 @@ contract CharityNature {
         total_reached = total_reached + msg.value;
 
         return IPosup(posupAddress).safeMint(_to, _campId);
+    }
+
+    function getContractBalance() public view returns (uint) {
+        return address(this).balance;
     }
 
     function withdraw(uint _campId) public {
