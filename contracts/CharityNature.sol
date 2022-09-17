@@ -35,7 +35,7 @@ contract CharityNature {
         return Posup(posupAddress).safeMint(_to, _campId);
     }
 
-    function withdraw(uint _campCounter) public {
+    function withdraw(uint _campId) public {
         require(msg.sender == owner, "Not a contract owner");
 
         //if withdraw, the campaigning is closed in the Posup contract
