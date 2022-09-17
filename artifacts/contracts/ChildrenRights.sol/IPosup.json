@@ -1,7 +1,7 @@
 {
   "_format": "hh-sol-artifact-1",
   "contractName": "IPosup",
-  "sourceName": "contracts/CharityNature.sol",
+  "sourceName": "contracts/ChildrenRights.sol",
   "abi": [
     {
       "inputs": [
