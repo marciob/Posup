@@ -21,7 +21,7 @@ contract CharityNature {
     address posupAddress;
 
     function donate(
-        uint _campCounter,
+        uint _campId,
         address _to,
         address _posup
     ) public payable {
@@ -31,14 +31,14 @@ contract CharityNature {
 
         total_reached = total_reached + msg.value;
 
-        return Posup(posupAddress).safeMint(_to, _campCounter);
+        return Posup(posupAddress).safeMint(_to, _campId);
     }
 
     function withdraw(uint _campCounter) public {
         require(msg.sender == owner, "Not a contract owner");
 
         //if withdraw, the campaigning is closed in the Posup contract
-        Posup(posupAddress).closeCamp(_campCounter);
+        Posup(posupAddress).closeCamp(_campId);
 
         uint amount = address(this).balance;
 
