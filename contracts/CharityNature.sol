@@ -26,6 +26,7 @@ contract CharityNature {
         address _posup
     ) public payable {
         require(max_donation_pool >= total_reached, "maximum donation reached");
+        require(msg.value > 0, "the donation needs to be higher than 0");
 
         posupAddress = _posup;
 
